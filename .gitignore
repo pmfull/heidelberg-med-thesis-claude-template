@@ -1,0 +1,25 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Compiled thesis PDF (the guideline PDFs and figures/CV.pdf stay tracked)
+Heidelberg_University_Medical_Faculty_Doctoral_Thesis/main.pdf
+
+# Editor/OS
+.DS_Store
+*.swp
