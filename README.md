@@ -34,6 +34,7 @@ haben, dass (und wie) das seriös und regelkonform geht.
 │   ├── 2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf
 │   └── ki-leitlinie-de.pdf
 ├── .claude/agents/promotionsausschuss.md                    # read-only Prüf-Agent
+├── .claude/commands/start.md                                 # /start – Onboarding-Befehl für neue Nutzer:innen
 └── CLAUDE.md                                                 # Arbeitsanleitung für Claude Code
 ```
 
@@ -46,17 +47,36 @@ mit `TODO` markiert.
 
 ## Schnellstart
 
-1. **Repo klonen** (oder als eigenes privates Repo forken, sobald ihr an
-   echten, ggf. sensiblen Inhalten arbeitet — siehe Regel 3 unten):
+Wichtig: Das hier ist ein **geteiltes Template**, kein Ort für eure eigene,
+ggf. unveröffentlichte Doktorarbeit. Bitte nicht direkt in dieses Repo
+hineinschreiben — jede/r bekommt eine eigene, in der Regel private Kopie.
+
+1. **Eigene Kopie erstellen.** Am einfachsten über den grünen
+   **"Use this template"**-Button oben auf der GitHub-Seite dieses Repos →
+   "Create a new repository" → eigenen Account wählen, Namen vergeben (z. B.
+   `meine-doktorarbeit`), Sichtbarkeit **Private** wählen. Das erzeugt ein
+   eigenständiges neues Repo ohne Verbindung zu diesem Template.
+   *(Klappt der Button nicht, z. B. weil das Template noch privat ist: einfach
+   dieses Repo klonen — Schritt 1 von `/start` unten hilft dann beim Trennen
+   vom geteilten Origin.)*
+2. **Lokal klonen:**
    ```bash
-   git clone https://github.com/<dein-account>/heidelberg-med-thesis-claude-template.git meine-doktorarbeit
+   git clone https://github.com/<dein-account>/meine-doktorarbeit.git
    cd meine-doktorarbeit
    ```
-2. **Eigenen Stand einbringen.** Kopiert eure bisherigen Kapitel/Notizen/euer
-   Word-Dokument in den Ordner (z. B. unter `entwurf/`) — Claude Code hilft
-   euch im nächsten Schritt, das strukturiert in die passenden
-   `chapters/*.tex`-Dateien zu überführen.
-3. **LaTeX-Umgebung.** Entweder lokal eine vollständige TeX-Live-Distribution
+3. **Claude Code installieren** (falls noch nicht geschehen) und im
+   Projektordner starten:
+   ```bash
+   claude
+   ```
+   Claude liest automatisch `CLAUDE.md` und kennt damit Struktur, Regeln und
+   Arbeitsweise für dieses Projekt.
+4. **`/start` eingeben.** Der mitgelieferte Onboarding-Befehl prüft, ob das
+   Repo sauber vom geteilten Template getrennt ist, verschafft einen
+   Überblick, und hilft direkt dabei, einen bestehenden Entwurf (Word,
+   Notizen, einzelne fertige Kapitel) Kapitel für Kapitel in die Vorlage zu
+   überführen.
+5. **LaTeX-Umgebung.** Entweder lokal eine vollständige TeX-Live-Distribution
    installieren und mit
    ```bash
    cd Heidelberg_University_Medical_Faculty_Doctoral_Thesis
@@ -65,16 +85,12 @@ mit `TODO` markiert.
    bauen, oder das Projekt ohne lokale Installation in
    [Overleaf](https://www.overleaf.com) hochladen (Literaturverwaltung lässt
    sich dort auch direkt mit Zotero verknüpfen).
-4. **Claude Code installieren** (falls noch nicht geschehen) und im
-   Projektordner starten:
-   ```bash
-   claude
-   ```
-   Claude liest automatisch `CLAUDE.md` und kennt damit Struktur, Regeln und
-   Arbeitsweise für dieses Projekt.
 
 ## Effizient mit Claude Code fertigstellen — Kurzanleitung
 
+0. **Einmalig `/start` ausführen** (siehe Schnellstart) — deckt Punkt 1 unten
+   für den ersten Entwurf bereits ab und stellt sicher, dass ihr in eurem
+   eigenen Repo arbeitet, nicht im geteilten Template.
 1. **Entwurf einspielen lassen.** Gib Claude deinen bestehenden Text (Word,
    Markdown, Copy-Paste) und bitte darum, ihn Kapitel für Kapitel in die
    passenden `chapters/*.tex`-Dateien zu überführen, inklusive Umwandlung von

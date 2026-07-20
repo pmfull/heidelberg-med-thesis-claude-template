@@ -25,6 +25,11 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
 - `.claude/agents/promotionsausschuss.md` — ein read-only Prüf-Agent, der die
   Arbeit wie ein Gutachtergremium bewertet. Nur auf ausdrücklichen Wunsch der
   Nutzerin/des Nutzers aufrufen, niemals proaktiv.
+- `.claude/commands/start.md` — der `/start`-Onboarding-Befehl für neue
+  Nutzer:innen (eigenes Repo einrichten, Entwurf einspielen). Wenn du merkst,
+  dass `origin` noch auf das geteilte Community-Template zeigt und die
+  Nutzerin/der Nutzer das offenbar noch nicht bemerkt hat, weise aktiv auf
+  `/start` hin, statt das Problem zu ignorieren.
 
 ## Wie du helfen sollst
 
