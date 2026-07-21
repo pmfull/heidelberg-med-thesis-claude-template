@@ -197,8 +197,9 @@ Innerhalb einer laufenden Sitzung (mit `/` eingeben) sind u. a. hilfreich:
 
 ## Die fünf Grundregeln für KI-Einsatz (Universität Heidelberg)
 
-Laut Medizinischer Fakultät Heidelberg darf eine Doktorarbeit mit Einsatz von
-KI-Tools fertiggestellt werden, **wenn alle fünf Punkte erfüllt sind**:
+Die Anwendung von KI-Tools zur Fertigstellung der Doktorarbeit sollte
+unproblematisch sein, wenn die folgenden fünf Regeln eingehalten werden — die
+Verantwortung für deren Einhaltung liegt bei der/dem Promovierenden selbst:
 
 1. **Der Betreuer/die Betreuerin ist mit der Verwendung und dem Umfang der
    Verwendung von KI-Tools einverstanden.** Sprecht Art und Umfang vorab ab —
