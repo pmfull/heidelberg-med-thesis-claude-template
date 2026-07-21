@@ -7,10 +7,13 @@ einer Anleitung, wie sich ein bereits angefangener Entwurf mit
 schreiben lässt — inklusive der formalen Anforderungen, die dabei zwingend
 einzuhalten sind.
 
-Entstanden ist dieses Repo, nachdem der Autor seine eigene medizinische
-Doktorarbeit mit Claude Code fertiggestellt hat und gemerkt hat, wie groß die
-Erleichterung war — und wie wenig Vorstellung viele Kommiliton:innen davon
-haben, dass (und wie) das seriös und regelkonform geht.
+Entstanden ist dieses Repo aus der eigenen, sehr positiven Erfahrung, die
+eigene medizinische Doktorarbeit mit Claude Code fertigzustellen. Der Ansatz
+wurde seitdem bereits mehrfach bei anderen Promovierenden angewendet und hat
+sich auch dort als hilfreich erwiesen. Dieses Repo soll genau das
+ermöglichen: die eigene Doktorarbeit seriös und regelkonform abzuschließen —
+auch ganz ohne Vorerfahrung mit den verwendeten Werkzeugen (Git, GitHub,
+LaTeX, Claude Code).
 
 > **Kein offizielles Angebot der Universität Heidelberg.** Das LaTeX-Template
 > wird von der Medizinischen Fakultät als möglicher Startpunkt verlinkt, aber
@@ -160,6 +163,37 @@ Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
    Absatz muss von dir selbst gelesen und fachlich für richtig befunden
    werden, bevor die Arbeit eingereicht wird (siehe Regel 5 unten) — Claude
    nimmt dir das Nach- und Durchdenken nicht ab.
+
+## Nützliche Claude-Code-Befehle
+
+Eine Doktorarbeit entsteht über Wochen und Monate, nicht in einer Sitzung.
+Diese Befehle sind dafür besonders relevant (Stand: `claude --help` in der
+aktuell installierten Version):
+
+- **`claude` im Projektordner** startet eine neue, interaktive Sitzung.
+- **`claude --resume`** (kurz `-r`) zeigt eine Liste früherer Unterhaltungen
+  in diesem Ordner und lässt dich eine davon fortsetzen — praktisch, wenn du
+  am nächsten Tag genau dort weitermachen willst, wo du aufgehört hast, statt
+  Claude den Stand neu erklären zu müssen.
+- **`claude --continue`** (kurz `-c`) springt ohne Auswahlmenü direkt in die
+  zuletzt genutzte Unterhaltung dieses Ordners.
+- **`claude --remote-control`** startet eine Sitzung, die du zusätzlich über
+  ein anderes Gerät (z. B. Handy/Browser) mitverfolgen und steuern kannst —
+  nützlich, wenn Claude gerade an einer längeren Aufgabe arbeitet und du
+  zwischendurch den Laptop verlassen möchtest.
+
+Innerhalb einer laufenden Sitzung (mit `/` eingeben) sind u. a. hilfreich:
+
+- **`/clear`** setzt den Gesprächskontext zurück — sinnvoll nach Abschluss
+  eines Kapitels, damit das nächste Thema nicht mit altem Kontext vermischt
+  wird.
+- **`/compact`** verdichtet eine lang gewordene Unterhaltung, statt sie ganz
+  zu löschen — hilft, wenn Claude in einer sehr langen Sitzung anfängt,
+  langsamer oder unpräziser zu werden.
+- **`/cost`** zeigt den bisherigen Nutzungsumfang/die Kosten der aktuellen
+  Sitzung.
+- **`/agents`** listet verfügbare Subagenten auf, u. a. `promotionsausschuss`.
+- **`/help`** zeigt alle verfügbaren Befehle dieser Installation.
 
 ## Die fünf Grundregeln für KI-Einsatz (Universität Heidelberg)
 
