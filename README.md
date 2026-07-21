@@ -51,6 +51,46 @@ Wichtig: Das hier ist ein **geteiltes Template**, kein Ort für eure eigene,
 ggf. unveröffentlichte Doktorarbeit. Bitte nicht direkt in dieses Repo
 hineinschreiben — jede/r bekommt eine eigene, in der Regel private Kopie.
 
+### Option A: Noch nie mit Git, GitHub, LaTeX oder Claude Code gearbeitet?
+
+Dann reicht ein einziger Prompt. Voraussetzung ist nur, dass
+[Claude Code](https://claude.com/claude-code) installiert ist — alles
+Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
+übernimmt Claude für dich.
+
+1. Leeren Ordner anlegen und darin Claude Code starten:
+   ```bash
+   mkdir meine-doktorarbeit-setup && cd meine-doktorarbeit-setup
+   claude
+   ```
+2. Folgenden Prompt 1:1 einfügen:
+   ```
+   Ich habe gerade Claude Code installiert und noch nie mit Git, GitHub
+   oder LaTeX gearbeitet. Ich möchte meine medizinische Doktorarbeit mit
+   dem Heidelberg-Template fertigstellen.
+
+   Bitte:
+   1. Erklär mir kurz in einfachen Worten, was in den nächsten Schritten
+      passiert.
+   2. Prüfe, ob `git` auf diesem Rechner installiert ist; falls nicht,
+      hilf mir bei der Installation.
+   3. Klone https://github.com/pmfull/heidelberg-med-thesis-claude-template.git
+      in einen neuen Unterordner `meine-doktorarbeit`.
+   4. Wechsle in diesen Ordner, lies CLAUDE.md und
+      .claude/commands/start.md, und führe mich Schritt für Schritt durch
+      die dort beschriebene Ersteinrichtung — inklusive meines eigenen,
+      privaten GitHub-Repos, falls ich noch keins dafür habe.
+
+   Ich habe keine Vorerfahrung: erklär mir Fachbegriffe kurz, bevor du sie
+   benutzt, und frag lieber einmal zu viel nach, bevor du etwas tust, das
+   schwer rückgängig zu machen ist (z. B. irgendwo pushen).
+   ```
+3. Ab hier führt Claude durch den Rest — inklusive der Frage, ob du bereits
+   einen bestehenden Entwurf (Word-Datei, Notizen, einzelne Kapitel) hast,
+   den es Kapitel für Kapitel in die Vorlage einpflegt.
+
+### Option B: Schon Erfahrung mit Git/GitHub — manuell in Einzelschritten
+
 1. **Eigene Kopie erstellen.** Am einfachsten über den grünen
    **"Use this template"**-Button oben auf der GitHub-Seite dieses Repos →
    "Create a new repository" → eigenen Account wählen, Namen vergeben (z. B.

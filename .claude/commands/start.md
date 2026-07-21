@@ -3,14 +3,38 @@ description: Onboarding für neue Nutzer:innen – eigenes Repo einrichten und b
 ---
 
 Du führst eine Doktorandin/einen Doktoranden durch die Ersteinrichtung dieser
-Vorlage. Das ist vermutlich die erste Interaktion mit diesem Projekt — sei
-konkret, führe Schritt für Schritt, und tue nichts Größeres ohne Rückfrage.
-Gehe die folgenden Schritte der Reihe nach durch; überspringe einen Schritt
-nur, wenn seine Prüfung zeigt, dass er bereits erledigt ist.
+Vorlage. Geh davon aus, dass die Person **noch nie** mit Git, GitHub, LaTeX
+oder Claude Code gearbeitet hat, auch wenn sie das nicht explizit sagt —
+erkläre Fachbegriffe kurz, bevor du sie benutzt, und beschreibe UI-Klicks so
+konkret wie ein Screenshot-Tutorial ("klicke oben rechts auf den grünen
+Button..."), nicht nur als Kommandozeile. Sei konkret, führe Schritt für
+Schritt, und tue nichts Größeres (v. a. `git push`, Remote-Änderungen) ohne
+Rückfrage. Gehe die folgenden Schritte der Reihe nach durch; überspringe einen
+Schritt nur, wenn seine Prüfung zeigt, dass er bereits erledigt ist.
+
+## Schritt 0 — Voraussetzungen prüfen
+
+- Prüfe `git --version`. Fehlt Git, leite kurz durch die Installation für das
+  jeweilige Betriebssystem (macOS: `xcode-select --install` oder
+  [git-scm.com](https://git-scm.com); Windows: [git-scm.com](https://git-scm.com);
+  Linux: `sudo apt install git` o. ä.) und warte auf Bestätigung, bevor du
+  weitermachst.
+- Frage, ob bereits ein **GitHub-Account** existiert. Falls nein: kurz auf
+  [github.com/join](https://github.com/join) verweisen (kostenlos) und warten,
+  bis einer eingerichtet ist — ohne Account kein eigenes Repo.
+- Prüfe, ob `gh` (GitHub CLI) installiert und eingeloggt ist
+  (`gh auth status`). Falls ja: das vereinfacht Schritt 1 (Repo-Erstellung
+  direkt aus dem Terminal statt über den Browser). Falls nein: kein Problem,
+  dann läuft Schritt 1 über die GitHub-Webseite — nicht von dir aus
+  installieren, ohne zu fragen, ob die Nutzerin/der Nutzer das möchte.
 
 ## Schritt 1 — Eigenes Repo statt geteiltem Template
 
 Prüfe mit `git remote -v` und `git log --oneline -20`, wohin `origin` zeigt.
+(Falls in diesem Ordner noch gar kein Git-Repo existiert, wurde vermutlich
+das Template noch nicht geklont — hole das zuerst nach:
+`git clone https://github.com/pmfull/heidelberg-med-thesis-claude-template.git .`
+in einen leeren Zielordner, dann hier fortfahren.)
 
 - **Zeigt `origin` auf das geteilte Community-Template**
   (`.../heidelberg-med-thesis-claude-template.git`, egal unter welchem
@@ -19,14 +43,23 @@ Prüfe mit `git remote -v` und `git log --oneline -20`, wohin `origin` zeigt.
   Erkläre kurz, warum das ein Problem ist (jeder Push würde in das geteilte
   Template aller Nutzer:innen gehen, nicht in einen eigenen Bereich), und
   führe dann durch die Trennung:
-  1. Frage, ob bereits ein eigenes, leeres GitHub-Repo existiert. Falls nein:
-     erkläre, dass es unter github.com/new angelegt werden muss — Empfehlung
-     **privat**, da eigene Entwürfe i. d. R. unveröffentlichte Inhalte
-     enthalten (siehe Regel 3 in `README.md`: strenger Datenschutz, das gilt
-     erst recht für alles, was noch nicht durch die eigene Doktorarbeit
-     autorisiert veröffentlicht ist).
-  2. Sobald die URL des neuen, leeren Repos vorliegt, führe aus (nach
-     Bestätigung durch die Nutzerin/den Nutzer, da dies ein Remote-Push ist):
+  1. Neues, leeres Repo erstellen:
+     - **Mit `gh` CLI** (falls in Schritt 0 verfügbar): nach Bestätigung
+       `gh repo create <name> --private --source=. --remote=neu` vorschlagen
+       (Name z. B. `meine-doktorarbeit`), dann `git remote remove origin`,
+       `git remote rename neu origin`.
+     - **Ohne `gh` CLI**: Schritt für Schritt anleiten — github.com öffnen,
+       oben rechts auf das "+"-Symbol → "New repository" klicken, Namen
+       vergeben (z. B. `meine-doktorarbeit`), **Private** auswählen (wichtig:
+       nicht "Add a README" o. ä. anhaken, das Repo muss leer bleiben),
+       "Create repository" klicken. Warte auf die resultierende URL.
+     Empfehlung **privat**, da eigene Entwürfe i. d. R. unveröffentlichte
+     Inhalte enthalten (siehe Regel 3 in `README.md`: strenger Datenschutz,
+     das gilt erst recht für alles, was noch nicht durch die eigene
+     Doktorarbeit autorisiert veröffentlicht ist).
+  2. Sobald die URL des neuen, leeren Repos vorliegt (falls nicht schon per
+     `gh` erledigt), führe aus (nach Bestätigung durch die Nutzerin/den
+     Nutzer, da dies ein Remote-Push ist):
      ```
      git remote remove origin
      git remote add origin <NEUE-URL>
