@@ -22,7 +22,15 @@ LaTeX, Claude Code).
 > erleichtert die Umsetzung, ersetzt aber nicht die verbindlichen Vorgaben der
 > Fakultät. Prüft vor Abgabe immer die aktuelle Fassung der
 > [Abfassungsrichtlinien](https://www.medizinische-fakultaet-hd.uni-heidelberg.de/fakultaet/akademische-laufbahn/promotion/promotion-zum-dr-sc-hum/schreiben-der-dissertation)
+> und der
+> [KI-Leitlinie](https://www.uni-heidelberg.de/md/zaw/ufg/informationen/ki-leitlinie-de.pdf)
 > und sprecht die KI-Nutzung mit eurem Betreuer/eurer Betreuerin ab.
+>
+> **Claude Code erfordert ein kostenpflichtiges Anthropic-Abo.** Der hier
+> beschriebene Ansatz setzt [Claude Code](https://claude.com/claude-code)
+> voraus, das nicht im kostenlosen Claude-Plan enthalten ist. Prüft die
+> aktuellen Nutzungsbedingungen und Datenschutzbestimmungen direkt auf der
+> Website von Anthropic, bevor ihr eigene bzw. sensible Inhalte eingebt.
 
 ## Inhalt dieses Repos
 

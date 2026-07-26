@@ -48,13 +48,30 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
    Material und Methoden → Ergebnisse → Diskussion → Schlussfolgerung
    inhaltlich zusammenhängen (siehe Prüfachse 3 des `promotionsausschuss`-
    Agenten für Details).
-5. **Formvorgaben respektieren.** Keine "we"-/Wir-Form, geschlechtergerechte
-   Sprache, Harvard-Zitierweise, Abbildungslegenden unterhalb, max. 4
-   Nachkommastellen — siehe `Leitlinien_Uni_HD/` für den vollständigen Katalog.
-6. **KI-Nutzung laufend dokumentieren.** Wird KI (du eingeschlossen) zur
-   Erzeugung von Inhalten eingesetzt, trage das direkt in
+5. **Formvorgaben von Anfang an einhalten, nicht erst bei der Endkontrolle
+   nachbessern.** Wende beim Formulieren und Überarbeiten aktiv die zentralen
+   Vorgaben aus `2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf` an, u. a.:
+   - Keine "we"-/Wir-Form (auch nicht in der englischen Fassung).
+   - Geschlechtergerechte Sprache durchgehend (kein generisches Maskulinum).
+   - Harvard-Zitierweise im Text (Autor Jahr, "et al." ab >2 Autoren); im
+     Literaturverzeichnis alle Autoren vollständig, NLM-Zeitschriftenkürzel,
+     DOI wo verfügbar.
+   - Abbildungslegenden unterhalb, Tabellenüberschriften oberhalb der
+     jeweiligen Abbildung/Tabelle; max. 4 Nachkommastellen.
+   - Dezimalgliederung im Inhaltsverzeichnis nur bis zur 3. Ebene.
+   Bei Detailfragen (Titelblatt, Zusammenfassung, Gliederungsreihenfolge,
+   Seitenlimit etc.) direkt in der PDF nachlesen (`pdftotext -layout`), nicht
+   raten oder aus dem Gedächtnis rekonstruieren — die vollständige Liste steht
+   in Prüfachse 4 des `promotionsausschuss`-Agenten.
+6. **KI-Leitlinie schon beim Schreiben mitdenken, nicht erst am Ende
+   dokumentieren.** Bevor du selbst Inhalte erzeugst oder substanziell
+   überarbeitest, prüfe kurz gegen `ki-leitlinie-de.pdf` bzw. die Harten
+   Grenzen unten, ob die geplante Nutzung im abgesprochenen Rahmen liegt. Trage
+   jede KI-Nutzung (auch deine eigene) direkt danach in
    `chapters/12_Anhang_KI_Tools.tex` ein (Ziel, Verwendungsweise, betroffene
-   Kapitel) — nicht erst kurz vor Abgabe aus dem Gedächtnis rekonstruieren.
+   Kapitel) — nicht erst kurz vor Abgabe aus dem Gedächtnis rekonstruieren. Die
+   vollständigen Anforderungen stehen in Prüfachse 5 des
+   `promotionsausschuss`-Agenten.
 7. **Vor Abgabe:** die Nutzerin/der Nutzer explizit auf den
    `promotionsausschuss`-Agenten hinweisen, wenn eine Gesamtprüfung ansteht,
    aber den Agenten nicht von dir aus aufrufen.

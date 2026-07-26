@@ -14,6 +14,11 @@ Schritt nur, wenn seine Prüfung zeigt, dass er bereits erledigt ist.
 
 ## Schritt 0 — Voraussetzungen prüfen
 
+- Weise kurz darauf hin, dass Claude Code ein **kostenpflichtiges
+  Anthropic-Abo** voraussetzt (nicht im kostenlosen Claude-Plan enthalten) —
+  falls die Person bereits hier sitzt, hat sie das i. d. R. schon geklärt,
+  aber ein kurzer Hinweis samt Verweis auf die aktuellen Nutzungsbedingungen
+  und Datenschutzbestimmungen auf der Anthropic-Website schadet nicht.
 - Prüfe `git --version`. Fehlt Git, leite kurz durch die Installation für das
   jeweilige Betriebssystem (macOS: `xcode-select --install` oder
   [git-scm.com](https://git-scm.com); Windows: [git-scm.com](https://git-scm.com);

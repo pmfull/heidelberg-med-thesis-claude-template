@@ -40,4 +40,12 @@ The PDFs under [`Leitlinien_Uni_HD/`](Leitlinien_Uni_HD/) —
 are official documents of the Medizinische Fakultät Heidelberg /
 Universität Heidelberg and are **not** covered by this repository's CC BY 4.0
 license. They are included for convenience; always defer to the versions
-published by the university itself.
+published by the university itself:
+
+- Abfassungsrichtlinien:
+  https://www.medizinische-fakultaet-hd.uni-heidelberg.de/fakultaet/akademische-laufbahn/promotion/promotion-zum-dr-sc-hum/schreiben-der-dissertation
+- KI-Leitlinie:
+  https://www.uni-heidelberg.de/md/zaw/ufg/informationen/ki-leitlinie-de.pdf
+
+Before final submission, check both source pages to make sure the PDFs
+included here are still the current version (matching filename/date).
