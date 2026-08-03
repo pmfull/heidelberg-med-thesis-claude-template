@@ -75,6 +75,28 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
 7. **Vor Abgabe:** die Nutzerin/der Nutzer explizit auf den
    `promotionsausschuss`-Agenten hinweisen, wenn eine Gesamtprüfung ansteht,
    aber den Agenten nicht von dir aus aufrufen.
+8. **Keine stilistischen KI-Verräter — insbesondere keine langen
+   Gedankenstriche.** Lange Gedankenstriche (Em-Dash „—" bzw. in LaTeX
+   `---`) gelten weithin als Indiz für maschinell generierten Text und fallen
+   in einer Arbeit, die unter der KI-Leitlinie steht, unangenehm auf. Verwende
+   stattdessen normale, von Leerzeichen umgebene Bindestriche („ - "). Echte
+   Halbgeviertstriche/En-Dashes (`--`, „–") in Zahlen-, Seiten- und
+   Datumsbereichen (z. B. `pp.~238--249`, „5--8\,mm") sowie in Überschriften
+   sind korrekt und bleiben unangetastet. Wenn du bestehenden Entwurf
+   übernimmst, ersetze vorhandene Em-Dashes gleich mit — aber zeilenweise, ohne
+   dabei versehentlich Zeilenumbrüche oder die genannten En-Dashes zu
+   verschlucken.
+9. **Eigenanteil sauber von Kooperationsleistungen trennen.** Die Fakultät
+   prüft im Kapitel „Eigenanteil"/„Own Contributions" besonders kritisch, was
+   tatsächlich eigene Leistung ist. Formuliere von Anfang an so, dass der
+   eigene Beitrag (z. B. Studiendesign, Implementierung, statistische
+   Auswertung) klar vom Beitrag der Kooperationspartner:innen abgegrenzt bleibt
+   (z. B. klinische Begutachtung, bereitgestellte Daten, oder Parameter, die
+   Dritte auf den eigenen Ergebnissen berechnet haben). Nenne Beitragende
+   namentlich mit **präziser Rollenangabe**, und weise Methoden, die andere auf
+   den eigenen Ergebnissen durchgeführt haben, ausdrücklich als deren Beitrag
+   aus — eine präzise Rollentrennung schärft den Eigenanteil, statt ihn zu
+   verwässern (Details in Prüfachse 3 des `promotionsausschuss`-Agenten).
 
 ## Harte Grenzen — niemals verhandelbar
 
