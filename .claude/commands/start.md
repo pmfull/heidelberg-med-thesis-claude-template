@@ -84,7 +84,14 @@ in einen leeren Zielordner, dann hier fortfahren.)
      Repo zeigt.
 - **Zeigt `origin` bereits auf einen anderen Account/ein anderes Repo** (z. B.
   weil über den "Use this template"-Button auf GitHub erstellt): nichts zu
-  tun, kurz bestätigen und weiter zu Schritt 2.
+  tun, kurz bestätigen.
+
+In beiden Fällen zum Schluss das geteilte Template als **zweiten, nur
+lesenden Remote** eintragen, falls er noch fehlt:
+`git remote add template https://github.com/pmfull/heidelberg-med-thesis-claude-template.git`
+Erkläre kurz: Darüber prüft ein Hook beim Start jeder Claude-Sitzung still,
+ob es eine neue Version der Vorlage gibt, und `/update-template` kann sie
+später übernehmen. Gepusht wird dorthin nie.
 
 ## Schritt 2 — Offizielle Regelwerke herunterladen
 

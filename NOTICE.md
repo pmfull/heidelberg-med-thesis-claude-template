@@ -30,7 +30,10 @@ regulations linked in the main [README](README.md).
   and should keep it.
 - Added `CLAUDE.md` with project-specific guidance for Claude Code.
 - Added the `.claude/agents/promotionsausschuss.md` review agent.
-- Added the `.claude/commands/start.md` onboarding command.
+- Added the `.claude/commands/start.md` onboarding command and the
+  `.claude/commands/update-template.md` update command, plus a SessionStart
+  hook (`.claude/settings.json`, `.claude/check-template-update.sh`) that
+  notifies users of a newer template version.
 - Added this README/attribution documentation.
 - Moved the appendix before the CV and marked the CV as optional, made the
   doctoral degree on the title page configurable (`\thesisdegree`), and
@@ -39,7 +42,8 @@ regulations linked in the main [README](README.md).
 ## Other original contributions
 
 `CLAUDE.md`, `.claude/agents/promotionsausschuss.md`,
-`.claude/commands/start.md`, `README.md`, `chapters/12_Anhang_KI_Tools.tex`, and this file were authored by
+`.claude/commands/start.md`, `.claude/commands/update-template.md`,
+`.claude/check-template-update.sh`, `README.md`, `chapters/12_Anhang_KI_Tools.tex`, and this file were authored by
 Peter Maximilian Full for this repository and are released under the same
 [CC BY 4.0](LICENSE) license as the template.
 

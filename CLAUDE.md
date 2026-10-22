@@ -35,6 +35,12 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
   dass `origin` noch auf das geteilte Community-Template zeigt und die
   Nutzerin/der Nutzer das offenbar noch nicht bemerkt hat, weise aktiv auf
   `/start` hin, statt das Problem zu ignorieren.
+- `.claude/commands/update-template.md` — `/update-template` übernimmt eine
+  neue Version der Vorlage in die eigene Kopie. Der Remote `template` (von
+  `/start` eingerichtet) ist nur zum Lesen; dorthin nie pushen. Ein
+  SessionStart-Hook (`.claude/check-template-update.sh`) meldet, wenn das
+  Template neue Commits hat; weise dann auf `/update-template` hin, führe
+  den Merge aber nicht ungefragt durch.
 
 ## Wie du helfen sollst
 

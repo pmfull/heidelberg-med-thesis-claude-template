@@ -76,6 +76,8 @@ dafür gibt es nicht.
 │                                                            # lädt /start lokal herunter (nicht committet)
 ├── .claude/agents/promotionsausschuss.md                    # read-only Prüf-Agent
 ├── .claude/commands/start.md                                 # /start – Onboarding-Befehl für neue Nutzer:innen
+├── .claude/commands/update-template.md                       # /update-template – neue Vorlagenversion übernehmen
+├── .claude/settings.json + check-template-update.sh          # Hook: Hinweis bei neuer Vorlagenversion
 └── CLAUDE.md                                                 # Arbeitsanleitung für Claude Code
 ```
 
@@ -225,6 +227,64 @@ Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
    unterschrieben und auf Deutsch eingebunden werden. Den Wortlaut der
    Musterformulare (u. a. ab „Mir ist bewusst, dass …“ in der KI-Angabe)
    nicht umformulieren lassen, auch nicht von Claude.
+
+## Vorlage aktualisieren (für bestehende Kopien)
+
+Die Vorlage wird weiterentwickelt, zuletzt für Version 2.5 der
+Abfassungsrichtlinien. Eure eigene Kopie bekommt davon nichts automatisch
+mit: Nach „Use this template“ oder `/start` hat euer Repo keine
+Git-Verbindung mehr zu diesem Template, ein einfaches `git pull` holt also
+nichts. Deshalb:
+
+- `/start` trägt das Template als zweiten, nur lesenden Remote namens
+  `template` ein. Ein mitgelieferter Hook prüft beim Start jeder
+  Claude-Sitzung still, ob es dort neue Commits gibt, und sagt dann Bescheid.
+- **`/update-template`** holt den neuen Stand und führt ihn zusammen. Euer
+  eigener Text bleibt dabei erhalten; vom Template kommen nur Struktur und
+  Pflichttexte. Claude zeigt am Ende, welche Dateien es angefasst hat, damit
+  ihr genau die gegenlest. Gepusht wird erst nach eurer Freigabe.
+
+Wer seine Kopie **vor Oktober 2026** angelegt hat, hat weder den Hook noch
+den Befehl. Für dieses erste Update reicht folgender Prompt in Claude Code
+(im Ordner eurer Kopie):
+
+```
+Ich arbeite in meiner eigenen Kopie des Heidelberg-Templates
+(https://github.com/pmfull/heidelberg-med-thesis-claude-template) und
+möchte die neueste Version der Vorlage übernehmen, ohne meinen eigenen Text
+zu verlieren. Ich habe wenig Erfahrung mit Git. Bitte:
+
+1. Prüfe mit `git status`, ob alles committet ist. Falls nicht, committe
+   meinen aktuellen Stand zuerst, damit nichts verloren gehen kann.
+2. Trage das Template als zusätzlichen Remote namens `template` ein (falls
+   noch nicht vorhanden) und hole den Stand mit `git fetch template master`.
+3. Zeig mir vorher kurz, welche Dateien sich im Template geändert haben
+   (`git diff --stat HEAD template/master`), und erklär mir, welche davon
+   meine eigenen Inhalte betreffen.
+4. Führe dann `git merge template/master` aus. Falls Git meldet, dass die
+   Historien nichts gemeinsam haben, benutze `--allow-unrelated-histories`.
+5. Löse Konflikte nach dieser Regel: Mein eigener Text (Kapitel, Titelblatt,
+   Literatur, Danksagung, ausgefüllte Erklärungen) bleibt immer erhalten.
+   Vom Template übernimmst du nur die Struktur und Pflichttexte, also
+   main.tex, CLAUDE.md, README.md, .claude/, .gitignore und den Wortlaut der
+   Erklärungen in chapters/10_*, 11_*, 11b_*, 12_* und KI_Taeuschungshinweis.tex.
+   Meine bereits eingetragenen Angaben darin (Name der Betreuung, meine
+   KI-Tool-Einträge) überträgst du in die neue Form. Bei Unsicherheit
+   fragst du nach, statt etwas zu löschen.
+6. Setze die neuen Schalter in main.tex passend zu meiner Arbeit
+   (\thesisdegree, \thesislanguage, \kiverwendettrue/false) und frag mich,
+   wenn du es nicht aus der Arbeit ablesen kannst.
+7. Lies danach .claude/commands/start.md und hole Schritt 2 nach (Download
+   der Richtlinien-PDFs), weil die PDFs nicht mehr im Repo liegen.
+8. Baue die Arbeit einmal komplett (latexmk -pdf main.tex), behebe
+   Build-Fehler und zeig mir am Ende eine Liste aller Dateien, in denen du
+   Konflikte gelöst hast, damit ich sie gegenlesen kann.
+
+Pushe nichts, bevor ich es gesehen habe.
+```
+
+Danach sind Hook und `/update-template` in eurer Kopie vorhanden, und
+künftige Updates laufen über den Befehl.
 
 ## Nützliche Claude-Code-Befehle
 
