@@ -18,34 +18,44 @@ regulations linked in the main [README](README.md).
 
 ### Changes made in this repository
 
-- Added `chapters/12_Anhang_KI_Tools.tex` as a fill-in appendix documenting
-  individual AI tools used (goal, mode of use, affected chapters/sections),
-  wired into `main.tex` after `chapters/11_Angabe_KI.tex`.
+- Updated the AI declarations to version 2.5 of the faculty's
+  Abfassungsrichtlinien: `chapters/11_Angabe_KI.tex` (template 11 a),
+  `chapters/12_Anhang_KI_Tools.tex` as a fill-in table documenting the AI
+  tools used (template 11 b), `chapters/11b_Erklaerung_Nichtverwendung_KI.tex`
+  (template 12) and the shared `chapters/KI_Taeuschungshinweis.tex`, selected
+  via `\kiverwendettrue`/`\kiverwendetfalse` in `main.tex`. The paragraph
+  below the table names this repository (author, URL, CC BY 4.0) and the
+  original LaTeX template (authors, Overleaf URL, CC BY 4.0); theses built
+  from this template thereby carry the attribution required by the license
+  and should keep it.
 - Added `CLAUDE.md` with project-specific guidance for Claude Code.
 - Added the `.claude/agents/promotionsausschuss.md` review agent.
-- Added `Leitlinien_Uni_HD/` with the two governing PDF guidelines and this
-  README/attribution documentation.
+- Added the `.claude/commands/start.md` onboarding command.
+- Added this README/attribution documentation.
+- Moved the appendix before the CV and marked the CV as optional, made the
+  doctoral degree on the title page configurable (`\thesisdegree`), and
+  replaced the sample CV (`figures/CV.pdf`) with a neutral placeholder.
 
 ## Other original contributions
 
-`CLAUDE.md`, `.claude/agents/promotionsausschuss.md`, `README.md`,
-`chapters/12_Anhang_KI_Tools.tex`, and this file were authored by
+`CLAUDE.md`, `.claude/agents/promotionsausschuss.md`,
+`.claude/commands/start.md`, `README.md`, `chapters/12_Anhang_KI_Tools.tex`, and this file were authored by
 Peter Maximilian Full for this repository and are released under the same
 [CC BY 4.0](LICENSE) license as the template.
 
 ## Official university guidelines
 
-The PDFs under [`Leitlinien_Uni_HD/`](Leitlinien_Uni_HD/) —
-`2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf` and `ki-leitlinie-de.pdf` —
-are official documents of the Medizinische Fakultät Heidelberg /
-Universität Heidelberg and are **not** covered by this repository's CC BY 4.0
-license. They are included for convenience; always defer to the versions
-published by the university itself:
+The Abfassungsrichtlinien of the Medizinische Fakultät Heidelberg and the
+KI-Leitlinie of Universität Heidelberg are official documents of the
+university and are **not** covered by this repository's CC BY 4.0 license.
+They are therefore **not distributed** with this repository. The `/start`
+command downloads the current versions from the official pages into the
+git-ignored folder `Leitlinien_Uni_HD/` on the user's machine:
 
 - Abfassungsrichtlinien:
   https://www.medizinische-fakultaet-hd.uni-heidelberg.de/fakultaet/akademische-laufbahn/promotion/promotion-zum-dr-sc-hum/schreiben-der-dissertation
 - KI-Leitlinie:
   https://www.uni-heidelberg.de/md/zaw/ufg/informationen/ki-leitlinie-de.pdf
 
-Before final submission, check both source pages to make sure the PDFs
-included here are still the current version (matching filename/date).
+Before final submission, check both source pages to make sure the local copies
+are still the current version (matching filename/date).

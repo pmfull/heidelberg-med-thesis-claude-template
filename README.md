@@ -31,6 +31,27 @@ LaTeX, Claude Code).
 > voraus, das nicht im kostenlosen Claude-Plan enthalten ist. Prüft die
 > aktuellen Nutzungsbedingungen und Datenschutzbestimmungen direkt auf der
 > Website von Anthropic, bevor ihr eigene bzw. sensible Inhalte eingebt.
+>
+> **Training mit euren Daten ausschalten.** Wenn ihr vermeiden wollt, dass
+> Inhalte eurer noch unveröffentlichten Doktorarbeit zum Training künftiger
+> Modelle verwendet werden, deaktiviert in euren Claude-Kontoeinstellungen
+> unter *Datenschutz* die Option, mit der eure Unterhaltungen zur
+> Verbesserung von Claude verwendet werden dürfen (auf
+> [claude.ai](https://claude.ai) unter Einstellungen → Datenschutz; die
+> Einstellung gilt auch für Claude Code). Macht das am besten, **bevor** ihr
+> den ersten Entwurf einspielt. Seid euch trotzdem bewusst: Die Modelle
+> laufen auch dann auf Servern von Anthropic, eure Eingaben verlassen also
+> euren Rechner. Dass Inhalte eurer Arbeit vor der Veröffentlichung nach
+> außen gelangen, lässt sich damit verringern, aber nicht mit letzter
+> Sicherheit ausschließen. Laut Datenschutzerklärung von Anthropic gibt es
+> außerdem Ausnahmen, in denen Unterhaltungen trotz deaktivierter Option
+> verwendet werden dürfen: wenn ihr selbst Feedback abgebt (z. B. eine
+> Antwort bewertet oder einen Fehler meldet; dabei kann die gesamte
+> Unterhaltung übermittelt werden) und wenn eine Unterhaltung für eine
+> Sicherheitsprüfung markiert wird. Gebt in Sitzungen mit eurer Arbeit also
+> am besten kein Feedback ab. Patientendaten und andere sensible
+> personenbezogene Daten gehören unabhängig von dieser Einstellung nie in
+> Claude (siehe Regel 3 unten).
 
 ## Inhalt dieses Repos
 
@@ -41,9 +62,8 @@ LaTeX, Claude Code).
 │   ├── titlepage.tex                                       # Titelblatt-Angaben
 │   ├── refs.bib                                            # Literaturverzeichnis
 │   └── chapters/                                           # ein Kapitel pro Datei/Ordner
-├── Leitlinien_Uni_HD/                                       # die zwei maßgeblichen Regelwerke (PDF)
-│   ├── 2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf
-│   └── ki-leitlinie-de.pdf
+├── Leitlinien_Uni_HD/                                       # Abfassungsrichtlinien + KI-Leitlinie (PDF),
+│                                                            # lädt /start von den offiziellen Seiten herunter
 ├── .claude/agents/promotionsausschuss.md                    # read-only Prüf-Agent
 ├── .claude/commands/start.md                                 # /start – Onboarding-Befehl für neue Nutzer:innen
 └── CLAUDE.md                                                 # Arbeitsanleitung für Claude Code
@@ -52,9 +72,17 @@ LaTeX, Claude Code).
 Das LaTeX-Template selbst ist bereits vollständig nach der vorgeschriebenen
 Gliederung aufgebaut (Titelblatt → Widmung → Verzeichnisse → Einleitung →
 Material und Methoden → Ergebnisse → Diskussion → Zusammenfassung →
-Literaturverzeichnis → Eigenanteil/Publikationen → Anhang → Lebenslauf →
-Danksagung → Eidesstattliche Versicherung → KI-Angabe). Offene Stellen sind
-mit `TODO` markiert.
+Literaturverzeichnis → Eigenanteil/Publikationen → Anhang → Lebenslauf
+(optional) → Danksagung → Eidesstattliche Versicherung → KI-Erklärung →
+Anhang zur KI-Dokumentation, nach Version 2.5 der Abfassungsrichtlinien).
+Offene
+Stellen sind mit `TODO` markiert.
+
+Die offiziellen Regelwerke (Abfassungsrichtlinien der Medizinischen Fakultät
+und KI-Leitlinie der Universität) sind **nicht** Teil dieses Repos, da sie
+nicht unter dessen Lizenz stehen und regelmäßig aktualisiert werden. `/start`
+lädt die jeweils aktuelle Fassung direkt von den offiziellen Seiten nach
+`Leitlinien_Uni_HD/` herunter, damit Claude darin nachlesen kann.
 
 ## Schnellstart
 
@@ -158,7 +186,19 @@ Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
 5. **KI-Nutzung sofort dokumentieren**, nicht erst am Ende aus dem Gedächtnis
    rekonstruieren: jeden Einsatz eines KI-Tools direkt in
    `Heidelberg_University_Medical_Faculty_Doctoral_Thesis/chapters/12_Anhang_KI_Tools.tex`
-   eintragen (Ziel, Verwendungsweise, betroffene Kapitel).
+   eintragen. Seit Version 2.5 der Abfassungsrichtlinien ist das eine Tabelle
+   (KI-Tool, Version, verwendete Funktionalität, Nutzungszweck,
+   Einsatzbereich, Art der Validierung); die Zeile zu Claude Code ist
+   vorbereitet, der Absatz darunter nennt die Vorlage (Lizenzpflicht, bitte
+   stehen lassen). Habt ihr gar keine KI genutzt, schaltet ihr in `main.tex`
+   mit `\kiverwendetfalse` auf die Nichtverwendungserklärung um. Die KI-Leitlinie
+   hält es je nach Aufgabe auch für sinnvoll, die verwendeten Prompts offenzulegen.
+   Claude Code speichert die Verläufe eurer Sitzungen lokal unter
+   `~/.claude/projects/`; sie können als Beleg dienen, wie ihr KI eingesetzt
+   habt. Beachtet aber: Diese Verläufe enthalten alles, was ihr mit Claude
+   besprochen habt, also in der Regel euren kompletten Entwurf. Gebt sie
+   nur gezielt und in Absprache mit eurer Betreuung weiter, und committet sie
+   nicht in ein öffentliches Repo.
 6. **Vor Abgabe: Gutachten einholen.** Der mitgelieferte Agent
    `promotionsausschuss` liest die gesamte Arbeit gegen die
    Abfassungsrichtlinien und die KI-Leitlinie und gibt ein strukturiertes,
@@ -171,6 +211,11 @@ Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
    Absatz muss von dir selbst gelesen und fachlich für richtig befunden
    werden, bevor die Arbeit eingereicht wird (siehe Regel 5 unten) — Claude
    nimmt dir das Nach- und Durchdenken nicht ab.
+8. **Unterschriften und Pflichttexte.** Die eidesstattliche Versicherung und
+   die KI-Angabe müssen in allen Pflichtexemplaren **handschriftlich**
+   unterschrieben und auf Deutsch eingebunden werden. Den Wortlaut der
+   Musterformulare (u. a. ab „Mir ist bewusst, dass …“ in der KI-Angabe)
+   nicht umformulieren lassen, auch nicht von Claude.
 
 ## Nützliche Claude-Code-Befehle
 
@@ -203,10 +248,11 @@ Innerhalb einer laufenden Sitzung (mit `/` eingeben) sind u. a. hilfreich:
 - **`/agents`** listet verfügbare Subagenten auf, u. a. `promotionsausschuss`.
 - **`/help`** zeigt alle verfügbaren Befehle dieser Installation.
 
-## Die fünf Grundregeln für KI-Einsatz (Universität Heidelberg)
+## Fünf Grundregeln für den KI-Einsatz (eigene Zusammenfassung der Heidelberger Vorgaben)
 
-Die Anwendung von KI-Tools zur Fertigstellung der Doktorarbeit sollte
-unproblematisch sein, wenn die folgenden fünf Regeln eingehalten werden — die
+Diese Regeln fassen zusammen, worauf es nach den Vorgaben der Universität
+Heidelberg und der Medizinischen Fakultät beim Einsatz von KI-Tools für die
+Doktorarbeit ankommt. Sie sind keine offiziellen Regeln der Universität. Die
 Verantwortung für deren Einhaltung liegt bei der/dem Promovierenden selbst:
 
 1. **Der Betreuer/die Betreuerin ist mit der Verwendung und dem Umfang der
@@ -216,20 +262,31 @@ Verantwortung für deren Einhaltung liegt bei der/dem Promovierenden selbst:
    erfundenen Ergebnisse, keine erfundenen Quellen, keine verschleierte
    Autorschaft.
 3. **Datenschutz — insbesondere bei Patientendaten — muss streng eingehalten
-   werden.** Keine sensiblen oder personenbezogenen Daten in externe
-   KI-Systeme eingeben.
+   werden.** Laut KI-Leitlinie gehören keine sensiblen, personenbezogenen
+   oder **vertraulichen** Daten und keine **urheberrechtlich geschützten
+   Texte** in KI-Systeme außerhalb der Infrastruktur der Universität. Das
+   heißt konkret: keine Patientendaten; keine fremden Paper-PDFs oder
+   Buchauszüge in Claude laden; und vorab mit der Betreuung klären, ob die
+   eigenen, noch unveröffentlichten Daten und Ergebnisse überhaupt extern
+   verarbeitet werden dürfen (z. B. wegen Kooperationsverträgen,
+   Geheimhaltungsvereinbarungen oder Auflagen aus dem Ethikvotum).
 4. **Verwendung und Umfang der KI-Tools müssen in einem gesonderten Anhang
-   angegeben werden.** Siehe `chapters/11_Angabe_KI.tex` und
-   `chapters/12_Anhang_KI_Tools.tex` in der Vorlage.
+   angegeben werden.** Siehe `chapters/11_Angabe_KI.tex` (Erklärung) und
+   `chapters/12_Anhang_KI_Tools.tex` (Anhang) in der Vorlage.
 5. **Der gesamte Text muss von der Doktorandin/dem Doktoranden gelesen und
    auf Korrektheit überprüft worden sein.** Volle inhaltliche Verantwortung
    bleibt bei der Verfasserin/dem Verfasser, unabhängig davon, welche
    Werkzeuge beim Schreiben geholfen haben.
 
-Maßgeblich sind immer die vollständigen Originaldokumente in
-[`Leitlinien_Uni_HD/`](Leitlinien_Uni_HD/) bzw. deren jeweils aktuelle Fassung
-auf den Seiten der Universität Heidelberg — diese fünf Punkte sind eine
-Zusammenfassung, keine abschließende Rechtsauskunft.
+Maßgeblich sind immer die jeweils aktuellen Originaldokumente auf den Seiten
+der Universität Heidelberg — diese fünf Punkte sind eine Zusammenfassung,
+keine abschließende Rechtsauskunft. Zum Geltungsbereich: Die KI-Leitlinie
+der Universität ist für Studium und Lehre geschrieben und gibt den
+universitätsweiten Rahmen vor. Für die Promotion an der Medizinischen
+Fakultät sind darüber hinaus verbindlich die jeweilige Promotionsordnung
+(Dr. med./Dr. med. dent. bzw. Dr. sc. hum.) und die Abfassungsrichtlinien
+der Fakultät, deren Musterformulare für die KI-Angabe wörtlich zu übernehmen
+sind. Im Zweifel hilft das Promotionsbüro der Fakultät weiter.
 
 ## Der `promotionsausschuss`-Agent
 
@@ -248,6 +305,11 @@ Er wird **nie automatisch** aktiv, sondern nur, wenn ihr ihn in Claude Code
 ausdrücklich aufruft. Er ändert keine Dateien — nur die Nutzerin/der Nutzer
 entscheidet über Änderungen.
 
+Wichtig: Der Agent **simuliert** eine Begutachtung. Sein Ergebnis ist eine
+Vorabprüfung durch ein KI-Werkzeug, keine Stellungnahme oder Entscheidung des
+echten Promotionsausschusses, und ein positives Ergebnis garantiert nicht,
+dass die Arbeit angenommen wird.
+
 ## Lizenz
 
 Dieses Repository steht unter [CC BY 4.0](LICENSE) — frei nutzbar, anpassbar
@@ -255,10 +317,11 @@ und weitergebbar, solange die Urheberschaft genannt wird. Das LaTeX-Template
 selbst stammt nicht vom Autor dieses Repos, sondern von Leonardo Ayala, Lisa
 Kausch, André Klein und Sarina Thomas ([Overleaf-Original](https://www.overleaf.com/latex/templates/heidelberg-university-medical-faculty-doctoral-thesis/fzxdxksbfqvm),
 ebenfalls CC BY 4.0) — die vollständige Attribution und die vorgenommenen
-Änderungen stehen in [NOTICE.md](NOTICE.md). Die mitgelieferten PDFs in
-`Leitlinien_Uni_HD/` sind offizielle Dokumente der Universität Heidelberg und
-unterliegen deren eigenen Bedingungen; bei Abweichungen gilt immer die von der
-Fakultät veröffentlichte Originalfassung.
+Änderungen stehen in [NOTICE.md](NOTICE.md). Die Abfassungsrichtlinien und
+die KI-Leitlinie sind offizielle Dokumente der Universität Heidelberg, fallen
+nicht unter diese Lizenz und werden deshalb nicht mit diesem Repo verbreitet,
+sondern von `/start` bei euch lokal von den offiziellen Seiten
+heruntergeladen.
 
 ## Beitragen
 

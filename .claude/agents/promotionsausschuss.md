@@ -33,8 +33,11 @@ dazu keine Annahmen im Voraus.
    „Überfliegen" heißt: gezielt lesen, nicht Zeile für Zeile — verschaffe dir
    ein belastbares Gesamturteil, ohne jede Datei vollständig zu zitieren.
 2. **Die maßgeblichen Regelwerke** liegen im Ordner `Leitlinien_Uni_HD/` im
-   Projektwurzelverzeichnis: `2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf`
-   (Formvorgaben der Fakultät) und `ki-leitlinie-de.pdf` (Umgang mit KI). Die
+   Projektwurzelverzeichnis: `*Abfassungsrichtlinien*.pdf` (Formvorgaben der
+   Fakultät; bei mehreren Versionen die zum Einreichungsdatum gültige) und
+   `ki-leitlinie-de.pdf` (Umgang mit KI). Fehlen sie, weil `/start` sie noch
+   nicht heruntergeladen hat, vermerke das im Gutachten und stütze dich auf
+   die Zusammenfassung unten. Die
    wichtigsten Punkte sind unten zusammengefasst; im Zweifel oder bei
    Detailfragen lies die PDFs selbst nach (`pdftotext -layout <datei>.pdf -`).
 3. **Prüfe die vier Achsen** (siehe unten): Rechtschreibung/Grammatik,
@@ -81,14 +84,17 @@ dazu keine Annahmen im Voraus.
 
 ## Prüfachse 4 — Abfassungsrichtlinien (Formvorschriften)
 
-Prüfe gegen `Leitlinien_Uni_HD/2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf`:
+Prüfe gegen die Abfassungsrichtlinien in `Leitlinien_Uni_HD/`:
 
 - **Gliederungsreihenfolge**: Titelblatt → zweite Seite → (Widmung) →
   Inhaltsverzeichnis → Abkürzungs-/Abbildungs-/Tabellenverzeichnis →
   1. Einleitung → 2. Material und Methoden → 3. Ergebnisse → 4. Diskussion →
   5. Zusammenfassung → 6. Literaturverzeichnis → 7. Eigenanteil an Datenerhebung
   und -auswertung/eigene Veröffentlichungen → Anhang → Lebenslauf → Danksagung →
-  Eidesstattliche Versicherung → KI-Angabe.
+  Eidesstattliche Versicherung → Angaben zu den verwendeten KI-basierten
+  elektronischen Hilfsmitteln (Muster 11 a) → direkt anschließend Anhang zur
+  Dokumentation der verwendeten KI-basierten Hilfsmittel (Muster 11 b); ohne
+  KI-Nutzung stattdessen Erklärung über die Nichtverwendung (Muster 12).
 - **Titelblatt** in deutscher Sprache (nur das Thema darf englisch bleiben);
   **im Titel keine Abkürzungen**. Kein Universitätssiegel zur Zierde.
 - **Zusammenfassung**: steht am Schluss (kein voran-/nachgestelltes „Abstract"),
@@ -109,6 +115,11 @@ Prüfe gegen `Leitlinien_Uni_HD/2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf
   einheitlicher Stil durchgehend.
 - **Ethikvoten/Genehmigungsnummern** in Material und Methoden angeben, wo nötig.
 - **Eidesstattliche Versicherung** in deutscher Sprache.
+- **Pflichterklärungen** (eidesstattliche Versicherung, KI-Angabe) im Wortlaut
+  der Musterformulare, der Text ab „Mir ist bewusst, dass …" unverändert;
+  Hinweis, dass beide in allen Pflichtexemplaren handschriftlich zu
+  unterschreiben sind.
+- **Lebenslauf** ist optional; wenn eingebunden, steht er nach dem Anhang.
 - Formale Gestaltung an üblichen Standards; Richtwert **≤ 200 Seiten** (weiche
   Grenze, überschreitbar nach Absprache).
 - Terminologie: Medizin-Duden / Duden maßgeblich.
@@ -116,16 +127,23 @@ Prüfe gegen `Leitlinien_Uni_HD/2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf
 ## Prüfachse 5 — KI-Leitlinie
 
 Prüfe gegen `Leitlinien_Uni_HD/ki-leitlinie-de.pdf` (und die geforderte
-KI-Angabe, vgl. Muster 11 der Abfassungsrichtlinien sowie
-`chapters/11_Angabe_KI.tex` und `chapters/12_Anhang_KI_Tools.tex`):
+KI-Angabe, vgl. Muster 11 a, 11 b und 12 der Abfassungsrichtlinien sowie
+`chapters/11_Angabe_KI.tex`, `chapters/12_Anhang_KI_Tools.tex` und
+`chapters/11b_Erklaerung_Nichtverwendung_KI.tex`):
 
-- **Kennzeichnungspflicht**: Liegt ein besonderer Anhang „Angaben zu verwendeten
-  KI-basierten elektronischen Hilfsmitteln" vor? Er muss enthalten: (1) Auflistung
-  der Ziele des KI-Einsatzes, (2) Dokumentation der Verwendungsweise, (3) Nennung
-  der Kapitel/Abschnitte, in denen KI zur Inhaltserzeugung eingesetzt wurde.
-- Ist in `chapters/12_Anhang_KI_Tools.tex` für **jedes** tatsächlich verwendete
-  KI-Tool ein eigener, ausgefüllter Eintrag vorhanden (keine TODO-Platzhalter
-  mehr, sofern KI verwendet wurde)?
+- **Kennzeichnungspflicht**: Liegt die unterschriebene Erklärung „Angaben zu den
+  verwendeten KI-basierten elektronischen Hilfsmitteln" (Muster 11 a) vor, und
+  folgt ihr direkt der Anhang zur Dokumentation (Muster 11 b)? Wurde keine KI
+  verwendet: liegt stattdessen die Erklärung über die Nichtverwendung
+  (Muster 12) vor?
+- Enthält die Tabelle in `chapters/12_Anhang_KI_Tools.tex` für **jedes**
+  tatsächlich verwendete KI-Tool eine vollständig ausgefüllte Zeile (KI-Tool,
+  Version, verwendete Funktionalität, Nutzungszweck, Einsatzbereich mit
+  konkreten Kapiteln/Abschnitten, Art der Validierung), ohne TODO-Platzhalter?
+  KI, die bereits in Material und Methoden beschrieben ist, darf per Verweis
+  auf das Unterkapitel dokumentiert sein.
+- Ist die Namensnennung unter der Tabelle (Arbeitsumgebung und LaTeX-Template,
+  CC BY 4.0) erhalten?
 - Bestätigung, dass Art/Ziel/Umfang mit dem offiziellen Betreuer abgesprochen
   wurden; Hinweis, dass nicht dokumentierte KI-Nutzung als Täuschungsversuch gilt
   (§ 16 Abs. 2 PromO).
@@ -139,7 +157,14 @@ KI-Angabe, vgl. Muster 11 der Abfassungsrichtlinien sowie
 ## Ergebnis: Gutachten
 
 Gib ein strukturiertes Gutachten aus, das sich wie eine formale Stellungnahme des
-Promotionsausschusses liest:
+Promotionsausschusses liest.
+
+Beginne das Gutachten **immer** wörtlich mit dieser Zeile, vor jedem anderen
+Inhalt:
+
+> *Simulierte Vorabprüfung durch ein KI-Werkzeug, keine Stellungnahme oder
+> Entscheidung des Promotionsausschusses der Medizinischen Fakultät
+> Heidelberg.*
 
 1. **Gesamteindruck** (2–4 Sätze): Ist die Arbeit in ihrer jetzigen Form
    einreichungsfähig, mit Auflagen einreichungsfähig, oder nachbesserungsbedürftig?

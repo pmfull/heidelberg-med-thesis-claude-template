@@ -1,59 +1,80 @@
-\chapter*{Anhang: Verwendete KI-basierte elektronische Hilfsmittel}
-\vspace{-6em}{\Huge\color{dkfzgray2} Appendix: AI-based tools used}
-\addcontentsline{toc}{chapter}{Anhang: Verwendete KI-basierte elektronische Hilfsmittel}
-
-Im Folgenden werden die im Rahmen dieser Dissertation verwendeten KI-basierten
-Hilfsmittel gemäß den Vorgaben aus dem Anhang „Angabe zu verwendeten KI-basierten
-elektronischen Hilfsmitteln" dokumentiert.
-
-\emph{\small\color{dkfzgray2} The AI-based tools used in the course of this
-dissertation are documented below, in accordance with the requirements set out
-in the appendix ``Information on the use of AI-based tools''.}
-
-\bigskip
+\chapter*{Anhang zur Dokumentation der verwendeten KI-basierten Hilfsmittel}
+\vspace{-6em}{\Huge\color{dkfzgray2} Appendix documenting the AI-based tools used}
+\addcontentsline{toc}{chapter}{Anhang zur Dokumentation der verwendeten KI-basierten Hilfsmittel}
+\par\vspace{2em}
 
 % ---------------------------------------------------------------------------
 % ANLEITUNG (vor Einreichung löschen):
 %
-% Für JEDES verwendete KI-Tool (z. B. Claude / Claude Code, ChatGPT, DeepL,
-% Grammarly, GitHub Copilot, ...) einen eigenen Block nach untenstehendem
-% Muster anlegen. Pflichtangaben laut KI-Leitlinie der Universität Heidelberg:
-%   1. Ziel:              Wofür wurde das Tool eingesetzt?
-%   2. Verwendungsweise:  Wie genau wurde es eingesetzt? (z. B. Grammatik-
-%                         korrektur, Übersetzung, Textentwurf, Code-Erstellung,
-%                         Literaturrecherche) UND die Bestätigung, dass jeder
-%                         Output eigenständig fachlich geprüft wurde.
-%   3. Betroffene Kapitel/Abschnitte: konkret benennen, nicht "überall".
+% Aufbau nach Muster 11 b der Abfassungsrichtlinien (Version 2.5). Dieser Anhang
+% steht direkt im Anschluss an die Erklärung (11_Angabe_KI.tex). Für JEDES
+% verwendete KI-Tool (z. B. Claude Code, ChatGPT, DeepL, Elicit, GitHub Copilot,
+% ...) eine eigene Tabellenzeile anlegen:
+%   KI-Tool                    Name des Werkzeugs
+%   Version                    Modell/Version oder Nutzungszeitraum (z. B. 10.2026)
+%   Verwendete Funktionalität  z. B. LLM, systematische Literaturrecherche
+%   Nutzungszweck              z. B. Textkorrektur, Ergänzung der manuellen
+%                              Literaturrecherche, Konvertierung eines Entwurfs
+%   Einsatzbereich             konkrete Kapitel/Abschnitte, nicht "überall"
+%   Art der Validierung        wie die Ergebnisse geprüft wurden, z. B.
+%                              Diff-Ansicht, manuelle Quellenprüfung in PubMed,
+%                              gezielte manuelle Überprüfung, eigene Texterstellung
 %
-% Wurde gar keine KI verwendet, hier explizit "Es wurden keine KI-basierten
-% Hilfsmittel verwendet." eintragen statt das Kapitel leer zu lassen.
+% KI-Anwendungen, die bereits in "Material und Methoden" ausführlich
+% beschrieben sind (z. B. KI als Forschungsmethode), brauchen hier nur einen
+% Verweis auf das jeweilige Unterkapitel.
+%
+% Die Zeile zu Claude Code ist bereits vorbereitet, weil diese Vorlage für die
+% Arbeit mit Claude Code gedacht ist. Der Absatz unter der Tabelle zur
+% Arbeitsumgebung (heidelberg-med-thesis-claude-template) und zum zugrunde
+% liegenden LaTeX-Template von Ayala, Kausch, Klein und Thomas ist die nach
+% CC BY 4.0 erforderliche Namensnennung und muss erhalten bleiben.
 % ---------------------------------------------------------------------------
 
-\section*{TODO: Name des Tools (z.\,B. Claude Code)}
-\addcontentsline{toc}{section}{TODO: Name des Tools}
-
-\begin{enumerate}
-    \item \textbf{Ziel.} TODO: Wofür wurde das Tool eingesetzt (z.\,B.
-    Rechtschreib-/Grammatikprüfung, Literaturrecherche, Umformulierung
-    bestehenden Textes, Erstellung von Textentwürfen, Code-Generierung für
-    Abbildungen, Konvertierung eines bestehenden Entwurfs in dieses
-    LaTeX-Template)?\\
-    \emph{\small\color{dkfzgray2} Goal. TODO: What was the tool used for?}
-
-    \item \textbf{Verwendungsweise.} TODO: Wie wurde das Tool konkret
-    eingesetzt? Wichtig: hier auch festhalten, dass alle Vorschläge/Entwürfe
-    vom Verfasser/von der Verfasserin eigenständig fachlich geprüft, korrigiert
-    und erst danach übernommen wurden.\\
-    \emph{\small\color{dkfzgray2} How used. TODO: How exactly was the tool
-    used? State that all suggestions/drafts were independently reviewed,
-    corrected, and approved by the author before adoption.}
-
-    \item \textbf{Betroffene Kapitel/Abschnitte.} TODO: Konkrete Kapitel/
-    Abschnitte benennen (z.\,B. "Einleitung, Abschnitt 2.3, Abbildungen 3.4
-    und 3.7").\\
-    \emph{\small\color{dkfzgray2} Chapters/sections affected. TODO: Name the
-    specific chapters/sections.}
-\end{enumerate}
+{\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\textwidth}{@{}*{6}{>{\raggedright\arraybackslash}X}@{}}
+\toprule
+\textbf{KI-Tool} & \textbf{Version} & \textbf{Verwendete Funktiona\-lität} & \textbf{Nutzungs\-zweck} & \textbf{Einsatz\-bereich} & \textbf{Art der Validierung} \\
+\midrule
+Claude Code (Anthropic)
+  & TODO: Modell und Nutzungs\-zeitraum
+  & TODO (z.\,B. LLM-Agent mit Zugriff auf die LaTeX-Projekt\-dateien)
+  & TODO (z.\,B. Konvertierung des Entwurfs in die LaTeX-Vorlage, Textkorrektur)
+  & TODO (konkrete Kapitel/\-Abschnitte)
+  & TODO (z.\,B. Diff-Ansicht jeder Änderung, gezielte manuelle Überprüfung) \\
+\midrule
+TODO: weiteres Tool & & & & & \\
+\bottomrule
+\end{tabularx}
+}
 
 \bigskip
-\textit{TODO: diesen Block für jedes weitere verwendete KI-Tool duplizieren.}
+
+\noindent Claude Code wurde innerhalb der frei verfügbaren Arbeitsumgebung
+„heidelberg-med-thesis-claude-template“ von Peter Maximilian Full
+eingesetzt (\url{https://github.com/pmfull/heidelberg-med-thesis-claude-template},
+Lizenz CC BY 4.0). Diese stellt die LaTeX-Vorlage dieser Arbeit sowie
+projektspezifische Arbeitsanweisungen für Claude Code bereit, die u.\,a. die
+Einhaltung der Abfassungsrichtlinien der Medizinischen Fakultät Heidelberg und
+der KI-Leitlinie der Universität Heidelberg vorgeben und das Erfinden von
+Quellen untersagen, sowie einen Prüf-Agenten, der die Arbeit auf Formvorgaben
+und Kohärenz prüft, ohne sie zu verändern. Die LaTeX-Vorlage basiert auf dem
+LaTeX-Template von Leonardo Ayala, Lisa Kausch, André Klein und Sarina Thomas
+(\url{https://www.overleaf.com/latex/templates/heidelberg-university-medical-faculty-doctoral-thesis/fzxdxksbfqvm},
+Lizenz CC BY 4.0).
+
+\emph{\small\color{dkfzgray2} Claude Code was used within the freely available
+working environment “heidelberg-med-thesis-claude-template” by Peter
+Maximilian Full
+(\url{https://github.com/pmfull/heidelberg-med-thesis-claude-template},
+licensed under CC BY 4.0). It provides the LaTeX template of this thesis as
+well as project-specific instructions for Claude Code that, among other things,
+require compliance with the writing guidelines of the Medical Faculty
+Heidelberg and the AI guideline of Heidelberg University and prohibit
+fabricating sources, and a review agent that checks the thesis for formal
+requirements and coherence without modifying it. The LaTeX template is based on
+the LaTeX template by Leonardo Ayala, Lisa Kausch, André Klein, and Sarina
+Thomas
+(\url{https://www.overleaf.com/latex/templates/heidelberg-university-medical-faculty-doctoral-thesis/fzxdxksbfqvm},
+licensed under CC BY 4.0).}

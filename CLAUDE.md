@@ -17,11 +17,16 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
   den Abfassungsrichtlinien vorgeschriebenen Gliederung. Offene Stellen sind
   mit `TODO` markiert — `grep -rn "TODO" chapters/` gibt einen schnellen
   Überblick über den Fortschritt.
-- `Leitlinien_Uni_HD/` — die zwei maßgeblichen Regelwerke als PDF:
-  `2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf` (Formvorgaben der
-  Fakultät) und `ki-leitlinie-de.pdf` (KI-Leitlinie der Universität
-  Heidelberg). Bei Unsicherheit über Formatierungsfragen dort nachlesen
-  (`pdftotext -layout <datei>.pdf -`), nicht raten.
+- `Leitlinien_Uni_HD/` — die zwei maßgeblichen Regelwerke als PDF: die
+  Abfassungsrichtlinien der Fakultät (`*Abfassungsrichtlinien*.pdf`,
+  Dateiname enthält Datum und Version) und die KI-Leitlinie der Universität
+  Heidelberg (`ki-leitlinie-de.pdf`). Sie sind **nicht** im Repo enthalten
+  (Urheberrecht der Universität, `.gitignore`), sondern werden von `/start`
+  (Schritt 2) von den offiziellen Seiten heruntergeladen. Fehlt der Ordner
+  oder ist er leer, biete an, diesen Schritt nachzuholen. Bei Unsicherheit
+  über Formatierungsfragen dort nachlesen (`pdftotext -layout <datei>.pdf -`),
+  nicht raten. Bei mehreren Versionen gilt die, die zum geplanten
+  Einreichungsdatum gültig ist.
 - `.claude/agents/promotionsausschuss.md` — ein read-only Prüf-Agent, der die
   Arbeit wie ein Gutachtergremium bewertet. Nur auf ausdrücklichen Wunsch der
   Nutzerin/des Nutzers aufrufen, niemals proaktiv.
@@ -50,7 +55,7 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
    Agenten für Details).
 5. **Formvorgaben von Anfang an einhalten, nicht erst bei der Endkontrolle
    nachbessern.** Wende beim Formulieren und Überarbeiten aktiv die zentralen
-   Vorgaben aus `2023_08_01_Abfassungsrichtlinien_Version_2_3.pdf` an, u. a.:
+   Vorgaben aus den Abfassungsrichtlinien (`Leitlinien_Uni_HD/`) an, u. a.:
    - Keine "we"-/Wir-Form (auch nicht in der englischen Fassung).
    - Geschlechtergerechte Sprache durchgehend (kein generisches Maskulinum).
    - Harvard-Zitierweise im Text (Autor Jahr, "et al." ab >2 Autoren); im
@@ -68,10 +73,25 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
    überarbeitest, prüfe kurz gegen `ki-leitlinie-de.pdf` bzw. die Harten
    Grenzen unten, ob die geplante Nutzung im abgesprochenen Rahmen liegt. Trage
    jede KI-Nutzung (auch deine eigene) direkt danach in
-   `chapters/12_Anhang_KI_Tools.tex` ein (Ziel, Verwendungsweise, betroffene
-   Kapitel) — nicht erst kurz vor Abgabe aus dem Gedächtnis rekonstruieren. Die
-   vollständigen Anforderungen stehen in Prüfachse 5 des
-   `promotionsausschuss`-Agenten.
+   `chapters/12_Anhang_KI_Tools.tex` ein (Tabelle nach Muster 11 b der
+   Abfassungsrichtlinien 2.5: KI-Tool, Version, verwendete Funktionalität,
+   Nutzungszweck, Einsatzbereich, Art der Validierung) — nicht erst kurz vor
+   Abgabe aus dem Gedächtnis rekonstruieren. Die vollständigen Anforderungen
+   stehen in Prüfachse 5 des `promotionsausschuss`-Agenten. Der dort
+   vorbereitete Absatz unter der Tabelle, der diese Arbeitsumgebung
+   (`heidelberg-med-thesis-claude-template`, Autor, URL, CC BY 4.0) und das
+   zugrunde liegende LaTeX-Template von Ayala, Kausch, Klein und Thomas
+   nennt, ist die von der Lizenz geforderte Namensnennung: beim Ausfüllen der
+   TODOs erhalten, nicht kürzen oder entfernen. Den Wortlaut der Pflichterklärungen
+   (`10_Eidestattliche_Erklärung.tex`, `11_Angabe_KI.tex`,
+   `11b_Erklaerung_Nichtverwendung_KI.tex`, `KI_Taeuschungshinweis.tex`) nie
+   umformulieren: er muss dem Musterformular der Abfassungsrichtlinien
+   entsprechen, der Text ab „Mir ist bewusst, dass …" bleibt unverändert. Wurde
+   gar keine KI verwendet, gilt statt Erklärung und Anhang die
+   Nichtverwendungserklärung (Muster 12, Schalter `\kiverwendetfalse` in
+   `main.tex`). Die Erklärungen müssen in allen Pflichtexemplaren
+   handschriftlich unterschrieben werden; weise darauf hin, wenn es um die
+   Abgabe geht.
 7. **Vor Abgabe:** die Nutzerin/der Nutzer explizit auf den
    `promotionsausschuss`-Agenten hinweisen, wenn eine Gesamtprüfung ansteht,
    aber den Agenten nicht von dir aus aufrufen.
@@ -105,6 +125,16 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
   in dieses (potenziell öffentliche) Repository committet werden. Das gilt für
   Rohdaten, Fallberichte, Bildmaterial und jede Information, die Rückschlüsse
   auf reale Patient:innen zulässt.
+- **Keine vertraulichen Daten und keine urheberrechtlich geschützten
+  Fremdtexte.** Die KI-Leitlinie schließt auch vertrauliche Daten (z. B. aus
+  Kooperationsverträgen, Geheimhaltungsvereinbarungen oder unter Auflagen des
+  Ethikvotums) und urheberrechtlich geschützte Texte (z. B. Volltexte fremder
+  Publikationen, Buchauszüge) von der Eingabe in externe KI-Systeme aus. Bitte
+  nicht darum, fremde Paper-PDFs einzulesen; arbeite mit Metadaten
+  (Autor:innen, Titel, DOI) und den eigenen Notizen der Nutzerin/des Nutzers.
+  Bevor ein Entwurf mit noch unveröffentlichten eigenen Daten oder
+  Ergebnissen eingespielt wird, weise darauf hin, vorab mit der Betreuung zu
+  klären, ob deren externe Verarbeitung zulässig ist.
 - **Keine Inhalte ungeprüft übernehmen.** Jede von dir erzeugte oder
   überarbeitete Textstelle muss von der Doktorandin/dem Doktoranden selbst
   gelesen und fachlich geprüft werden, bevor sie stehen bleibt — weise aktiv

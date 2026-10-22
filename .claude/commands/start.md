@@ -19,6 +19,17 @@ Schritt nur, wenn seine Prüfung zeigt, dass er bereits erledigt ist.
   falls die Person bereits hier sitzt, hat sie das i. d. R. schon geklärt,
   aber ein kurzer Hinweis samt Verweis auf die aktuellen Nutzungsbedingungen
   und Datenschutzbestimmungen auf der Anthropic-Website schadet nicht.
+- Weise **vor dem Einspielen eines Entwurfs** darauf hin, dass sich in den
+  Claude-Kontoeinstellungen (claude.ai → Einstellungen → Datenschutz) die
+  Verwendung der eigenen Unterhaltungen zum Training künftiger Modelle
+  ausschalten lässt, und empfiehl das für eine noch unveröffentlichte
+  Doktorarbeit. Stelle dabei klar: Auch mit dieser Einstellung laufen die
+  Modelle auf Servern von Anthropic, die Inhalte verlassen also den eigenen
+  Rechner. Dass Inhalte der Arbeit vor der Veröffentlichung nach außen
+  gelangen, lässt sich damit verringern, aber nicht mit letzter Sicherheit
+  ausschließen. Patientendaten gehören unabhängig davon nie in Claude.
+  Warte auf eine kurze Bestätigung, dass die Person das zur Kenntnis
+  genommen hat (sie muss die Einstellung nicht ändern).
 - Prüfe `git --version`. Fehlt Git, leite kurz durch die Installation für das
   jeweilige Betriebssystem (macOS: `xcode-select --install` oder
   [git-scm.com](https://git-scm.com); Windows: [git-scm.com](https://git-scm.com);
@@ -76,17 +87,54 @@ in einen leeren Zielordner, dann hier fortfahren.)
   weil über den "Use this template"-Button auf GitHub erstellt): nichts zu
   tun, kurz bestätigen und weiter zu Schritt 2.
 
-## Schritt 2 — Überblick verschaffen
+## Schritt 2 — Offizielle Regelwerke herunterladen
+
+Die Abfassungsrichtlinien und die KI-Leitlinie sind aus urheberrechtlichen
+Gründen nicht im Repo enthalten (`Leitlinien_Uni_HD/` steht in
+`.gitignore`). Lade sie lokal herunter, damit du später darin nachlesen
+kannst. Überspringe den Schritt, wenn beide bereits in `Leitlinien_Uni_HD/`
+liegen und noch aktuell sind.
+
+1. Rufe die Fakultätsseite
+   https://www.medizinische-fakultaet-hd.uni-heidelberg.de/fakultaet/akademische-laufbahn/promotion/promotion-zum-dr-sc-hum/schreiben-der-dissertation
+   ab und ermittle die dort verlinkte(n) PDF(s) der Abfassungsrichtlinien
+   samt Gültigkeitszeitraum. Rate keine URL. Findest du keinen Link, bitte
+   die Nutzerin/den Nutzer, das PDF selbst herunterzuladen und in
+   `Leitlinien_Uni_HD/` abzulegen.
+2. Sind mehrere Versionen verlinkt (z. B. eine alte und eine ab einem
+   Stichtag gültige neue), frage nach dem geplanten Einreichungsdatum und
+   erkläre, welche Version dann gilt. Im Zweifel beide herunterladen und auf
+   das Promotionsbüro verweisen.
+3. Lade die PDF(s) mit ihrem Originaldateinamen nach `Leitlinien_Uni_HD/`,
+   außerdem die KI-Leitlinie von
+   https://www.uni-heidelberg.de/md/zaw/ufg/informationen/ki-leitlinie-de.pdf
+   als `Leitlinien_Uni_HD/ki-leitlinie-de.pdf`.
+4. Prüfe kurz mit `pdftotext`, dass die Dateien lesbar sind und tatsächlich
+   die erwarteten Dokumente enthalten (Titel, Versionsnummer).
+
+## Schritt 3 — Überblick verschaffen
 
 Lies `README.md` (falls noch nicht im Kontext) und `CLAUDE.md`, damit du
 Struktur, die fünf Grundregeln und die Arbeitsweise kennst. Fasse für die
 Nutzerin/den Nutzer in 2–3 Sätzen zusammen, was jetzt ansteht, statt die
 Dateien vollständig wiederzugeben.
 
-## Schritt 3 — Bestehenden Entwurf einspielen
+Frage außerdem, welcher Doktorgrad angestrebt wird (Dr. med., Dr. med. dent.
+oder Dr. sc. hum.), und setze `\thesisdegree` in `main.tex` entsprechend,
+damit das Titelblatt stimmt.
+
+## Schritt 4 — Bestehenden Entwurf einspielen
 
 Frage konkret nach, ob bereits ein Entwurf existiert (Word-Datei, lose
 Notizen, einzelne fertige Kapitel, oder "bei null") und wo dieser liegt.
+
+Bevor du einen Entwurf einliest, weise kurz darauf hin, dass laut
+KI-Leitlinie keine vertraulichen Daten und keine urheberrechtlich
+geschützten Fremdtexte in externe KI-Systeme gehören. Wenn der Entwurf
+unveröffentlichte eigene Daten oder Ergebnisse enthält, sollte vorab mit
+der Betreuung geklärt sein, ob deren Verarbeitung durch Claude zulässig ist
+(z. B. wegen Kooperationsverträgen oder Auflagen aus dem Ethikvotum). Frage
+nach, ob das geklärt ist. Patientendaten vorher entfernen lassen.
 
 - Falls ein Entwurf existiert: biete an, ihn **Kapitel für Kapitel** in die
   passenden `Heidelberg_University_Medical_Faculty_Doctoral_Thesis/chapters/*.tex`
@@ -101,7 +149,7 @@ Notizen, einzelne fertige Kapitel, oder "bei null") und wo dieser liegt.
   Kapitelinhalte, ...) und biete an, gemeinsam mit dem Titelblatt/der
   Einleitung zu beginnen.
 
-## Schritt 4 — Ausblick
+## Schritt 5 — Ausblick
 
 Schließe mit einem kurzen Hinweis (keine lange Liste):
 

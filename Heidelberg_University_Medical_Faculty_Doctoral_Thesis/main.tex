@@ -1,6 +1,16 @@
 \documentclass{thesis}
 
 \newcommand{\thesistitle}{TODO TITLE}
+% Angestrebter Doktorgrad: med (Dr. med.), dent (Dr. med. dent.) oder schum (Dr. sc. hum.)
+\newcommand{\thesisdegree}{med}
+\newcommand{\thesisdegreephrase}{%
+  \ifdefstring{\thesisdegree}{dent}{des Doktorgrades in der Zahnheilkunde}{%
+  \ifdefstring{\thesisdegree}{schum}{des Doctor scientiarum humanarum (Dr.\,sc.\,hum.)}{%
+  des medizinischen Doktorgrades}}}
+% KI-basierte Hilfsmittel verwendet? \kiverwendettrue: Erklärung (Muster 11 a) +
+% Anhang (Muster 11 b); \kiverwendetfalse: Nichtverwendungserklärung (Muster 12)
+\newif\ifkiverwendet
+\kiverwendettrue
 
 \usepackage{mathpazo}  % font: palatino vs computer modern
 \usepackage{lipsum} % used to fill random text in sections
@@ -66,17 +76,23 @@
 
     \input{chapters/07_Own_Publications}
 
+    \input{chapters/08_Appendix}
+
     \pagestyle{plain}
-    % Include CV from PDF like this:
+    % Lebenslauf: laut Abfassungsrichtlinien optional, steht nach dem Anhang.
+    % figures/CV.pdf durch den eigenen Lebenslauf ersetzen oder diesen Block
+    % auskommentieren, wenn kein Lebenslauf eingebunden werden soll.
     \phantomsection
     \addcontentsline{toc}{chapter}{Curriculum Vitae}
     \includepdf[pages=-,frame,scale=.77,pagecommand={\thispagestyle{plain}}]{figures/CV.pdf}
-    
 
-    \input{chapters/08_Appendix}
     \input{chapters/09_Acknowledgement}
     \input{chapters/10_Eidestattliche_Erklärung}
-    \input{chapters/11_Angabe_KI}
-    \input{chapters/12_Anhang_KI_Tools}
+    \ifkiverwendet
+        \input{chapters/11_Angabe_KI}
+        \input{chapters/12_Anhang_KI_Tools}
+    \else
+        \input{chapters/11b_Erklaerung_Nichtverwendung_KI}
+    \fi
 
 \end{document}
