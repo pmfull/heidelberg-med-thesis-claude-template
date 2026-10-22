@@ -25,4 +25,5 @@ Heidelberg_University_Medical_Faculty_Doctoral_Thesis/main.pdf
 *.swp
 
 # Official university guidelines: not redistributed, downloaded locally by /start
-Leitlinien_Uni_HD/
+Leitlinien_Uni_HD/*
+!Leitlinien_Uni_HD/README.md

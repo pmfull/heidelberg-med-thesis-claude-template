@@ -54,9 +54,8 @@ in einen leeren Zielordner, dann hier fortfahren.)
 
 - **Zeigt `origin` auf das geteilte Community-Template**
   (`.../heidelberg-med-thesis-claude-template.git`, egal unter welchem
-  Account), UND enthält die Historie nur den einen ursprünglichen
-  "Initial import"-Commit: Das ist ein direkter Klon des geteilten Templates.
-  Erkläre kurz, warum das ein Problem ist (jeder Push würde in das geteilte
+  Account): Das ist ein direkter Klon des geteilten Templates, unabhängig
+  davon, wie viele Commits die Historie enthält. Erkläre kurz, warum das ein Problem ist (jeder Push würde in das geteilte
   Template aller Nutzer:innen gehen, nicht in einen eigenen Bereich), und
   führe dann durch die Trennung:
   1. Neues, leeres Repo erstellen:
@@ -157,6 +156,13 @@ Schließe mit einem kurzen Hinweis (keine lange Liste):
 - Vor Abgabe den `promotionsausschuss`-Agenten für ein Gutachten aufrufen.
 - Jede KI-Nutzung direkt in `chapters/12_Anhang_KI_Tools.tex` dokumentieren,
   nicht erst am Ende aus dem Gedächtnis rekonstruieren.
+- Für den Inhalt der Arbeit steht am Ende allein die Nutzerin/der Nutzer
+  ein: Mit der eidesstattlichen Versicherung und der KI-Erklärung
+  unterschreibt sie/er persönlich, dass alles geprüft und korrekt ist. Ein
+  Fehler, den Claude gemacht hat, gilt bei der Einreichung als eigener
+  Fehler; nicht dokumentierte KI-Nutzung kann als Täuschungsversuch gewertet
+  werden (§ 16 Abs. 2 PromO). Deshalb jeden von Claude erzeugten oder
+  geänderten Absatz selbst lesen und fachlich prüfen.
 
 Frage danach, womit die Nutzerin/der Nutzer konkret starten möchte, statt
 selbst vorzugreifen.

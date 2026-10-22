@@ -83,7 +83,7 @@ einzelne Kapitel) in dieses Template überführt und fertigstellt.
    zugrunde liegende LaTeX-Template von Ayala, Kausch, Klein und Thomas
    nennt, ist die von der Lizenz geforderte Namensnennung: beim Ausfüllen der
    TODOs erhalten, nicht kürzen oder entfernen. Den Wortlaut der Pflichterklärungen
-   (`10_Eidestattliche_Erklärung.tex`, `11_Angabe_KI.tex`,
+   (`10_Eidesstattliche_Versicherung.tex`, `11_Angabe_KI.tex`,
    `11b_Erklaerung_Nichtverwendung_KI.tex`, `KI_Taeuschungshinweis.tex`) nie
    umformulieren: er muss dem Musterformular der Abfassungsrichtlinien
    entsprechen, der Text ab „Mir ist bewusst, dass …" bleibt unverändert. Wurde

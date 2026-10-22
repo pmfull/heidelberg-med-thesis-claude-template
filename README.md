@@ -2,18 +2,17 @@
 
 Eine LaTeX-Vorlage für Inauguraldissertationen (Dr. med. / Dr. med. dent. /
 Dr. sc. hum.) an der **Medizinischen Fakultät Heidelberg**, kombiniert mit
-einer Anleitung, wie sich ein bereits angefangener Entwurf mit
-[Claude Code](https://claude.com/claude-code) spürbar effizienter zu Ende
-schreiben lässt — inklusive der formalen Anforderungen, die dabei zwingend
-einzuhalten sind.
+einer Arbeitsumgebung für [Claude Code](https://claude.com/claude-code):
+Anleitung, projektspezifische Regeln und ein Prüf-Agent, damit ein bereits
+angefangener Entwurf im Rahmen der Abfassungsrichtlinien und der KI-Leitlinie
+fertiggestellt werden kann.
 
-Entstanden ist dieses Repo aus der eigenen, sehr positiven Erfahrung, die
-eigene medizinische Doktorarbeit mit Claude Code fertigzustellen. Der Ansatz
-wurde seitdem bereits mehrfach bei anderen Promovierenden angewendet und hat
-sich auch dort als hilfreich erwiesen. Dieses Repo soll genau das
-ermöglichen: die eigene Doktorarbeit seriös und regelkonform abzuschließen —
-auch ganz ohne Vorerfahrung mit den verwendeten Werkzeugen (Git, GitHub,
-LaTeX, Claude Code).
+Entstanden ist das Repo aus meiner eigenen Erfahrung beim Abschluss meiner
+medizinischen Doktorarbeit mit Claude Code; einige andere Promovierende haben
+es seither ebenfalls genutzt. Es richtet sich ausdrücklich auch an Personen
+ohne Vorerfahrung mit Git, GitHub, LaTeX oder Claude Code. Ob und wie viel es
+im Einzelfall hilft, hängt von Entwurf, Fach und Betreuung ab; eine Garantie
+dafür gibt es nicht.
 
 > **Kein offizielles Angebot der Universität Heidelberg.** Das LaTeX-Template
 > wird von der Medizinischen Fakultät als möglicher Startpunkt verlinkt, aber
@@ -26,29 +25,40 @@ LaTeX, Claude Code).
 > [KI-Leitlinie](https://www.uni-heidelberg.de/md/zaw/ufg/informationen/ki-leitlinie-de.pdf)
 > und sprecht die KI-Nutzung mit eurem Betreuer/eurer Betreuerin ab.
 >
+> **Haftungsausschluss.** Dieses Repo ist ein privates Hilfsangebot ohne
+> Gewähr für Richtigkeit, Vollständigkeit oder Aktualität. Die Anpassung der
+> Vorlage an Version 2.5 der Abfassungsrichtlinien (gültig ab 01.11.2026)
+> hat der Autor dieses Repos vorgenommen, nicht die Fakultät und nicht die
+> Autor:innen des ursprünglichen LaTeX-Templates, das die Fakultät für
+> Version 2.4 verlinkt. Über Form und Annahme einer Dissertation entscheidet
+> allein die Fakultät; maßgeblich sind immer die aktuellen offiziellen
+> Dokumente und die Absprache mit der Betreuung.
+>
 > **Claude Code erfordert ein kostenpflichtiges Anthropic-Abo.** Der hier
 > beschriebene Ansatz setzt [Claude Code](https://claude.com/claude-code)
 > voraus, das nicht im kostenlosen Claude-Plan enthalten ist. Prüft die
 > aktuellen Nutzungsbedingungen und Datenschutzbestimmungen direkt auf der
 > Website von Anthropic, bevor ihr eigene bzw. sensible Inhalte eingebt.
 >
-> **Training mit euren Daten ausschalten.** Wenn ihr vermeiden wollt, dass
-> Inhalte eurer noch unveröffentlichten Doktorarbeit zum Training künftiger
-> Modelle verwendet werden, deaktiviert in euren Claude-Kontoeinstellungen
-> unter *Datenschutz* die Option, mit der eure Unterhaltungen zur
-> Verbesserung von Claude verwendet werden dürfen (auf
-> [claude.ai](https://claude.ai) unter Einstellungen → Datenschutz; die
-> Einstellung gilt auch für Claude Code). Macht das am besten, **bevor** ihr
-> den ersten Entwurf einspielt. Seid euch trotzdem bewusst: Die Modelle
+> **Training mit euren Daten ausschalten (Stand: Oktober 2026).** Wenn ihr
+> vermeiden wollt, dass Inhalte eurer noch unveröffentlichten Doktorarbeit
+> zum Training künftiger Modelle verwendet werden, schaltet in den
+> Datenschutz-Einstellungen eures Claude-Kontos
+> ([claude.ai/settings/data-privacy-controls](https://claude.ai/settings/data-privacy-controls))
+> den Schalter **„Help improve Claude“** aus. Laut Anthropic gilt die
+> Einstellung der Free-, Pro- und Max-Pläne auch für Claude Code. Macht das
+> am besten, **bevor** ihr den ersten Entwurf einspielt. Seid euch trotzdem bewusst: Die Modelle
 > laufen auch dann auf Servern von Anthropic, eure Eingaben verlassen also
 > euren Rechner. Dass Inhalte eurer Arbeit vor der Veröffentlichung nach
 > außen gelangen, lässt sich damit verringern, aber nicht mit letzter
 > Sicherheit ausschließen. Laut Datenschutzerklärung von Anthropic gibt es
 > außerdem Ausnahmen, in denen Unterhaltungen trotz deaktivierter Option
 > verwendet werden dürfen: wenn ihr selbst Feedback abgebt (z. B. eine
-> Antwort bewertet oder einen Fehler meldet; dabei kann die gesamte
-> Unterhaltung übermittelt werden) und wenn eine Unterhaltung für eine
-> Sicherheitsprüfung markiert wird. Gebt in Sitzungen mit eurer Arbeit also
+> Antwort mit Daumen hoch/runter bewertet oder einen Fehler meldet; dann
+> speichert Anthropic die gesamte zugehörige Unterhaltung bis zu fünf Jahre)
+> und wenn eine Unterhaltung für eine Sicherheitsprüfung markiert wird.
+> Bezeichnungen und Regeln ändern sich; maßgeblich ist, was Anthropic
+> aktuell im [Privacy Center](https://privacy.claude.com) schreibt. Gebt in Sitzungen mit eurer Arbeit also
 > am besten kein Feedback ab. Patientendaten und andere sensible
 > personenbezogene Daten gehören unabhängig von dieser Einstellung nie in
 > Claude (siehe Regel 3 unten).
@@ -62,8 +72,8 @@ LaTeX, Claude Code).
 │   ├── titlepage.tex                                       # Titelblatt-Angaben
 │   ├── refs.bib                                            # Literaturverzeichnis
 │   └── chapters/                                           # ein Kapitel pro Datei/Ordner
-├── Leitlinien_Uni_HD/                                       # Abfassungsrichtlinien + KI-Leitlinie (PDF),
-│                                                            # lädt /start von den offiziellen Seiten herunter
+├── Leitlinien_Uni_HD/                                       # leer bis auf eine README; die PDFs der Richtlinien
+│                                                            # lädt /start lokal herunter (nicht committet)
 ├── .claude/agents/promotionsausschuss.md                    # read-only Prüf-Agent
 ├── .claude/commands/start.md                                 # /start – Onboarding-Befehl für neue Nutzer:innen
 └── CLAUDE.md                                                 # Arbeitsanleitung für Claude Code
@@ -134,10 +144,9 @@ Weitere (Git-Check, Klonen, eigenes Repo einrichten, Entwurf einspielen)
    **"Use this template"**-Button oben auf der GitHub-Seite dieses Repos →
    "Create a new repository" → eigenen Account wählen, Namen vergeben (z. B.
    `meine-doktorarbeit`), Sichtbarkeit **Private** wählen. Das erzeugt ein
-   eigenständiges neues Repo ohne Verbindung zu diesem Template.
-   *(Klappt der Button nicht, z. B. weil das Template noch privat ist: einfach
-   dieses Repo klonen — Schritt 1 von `/start` unten hilft dann beim Trennen
-   vom geteilten Origin.)*
+   eigenständiges neues Repo ohne Verbindung zu diesem Template. *(Wer das
+   Repo stattdessen direkt klont: Schritt 1 von `/start` unten hilft beim
+   Trennen vom geteilten Origin.)*
 2. **Lokal klonen:**
    ```bash
    git clone https://github.com/<dein-account>/meine-doktorarbeit.git
@@ -276,7 +285,15 @@ Verantwortung für deren Einhaltung liegt bei der/dem Promovierenden selbst:
 5. **Der gesamte Text muss von der Doktorandin/dem Doktoranden gelesen und
    auf Korrektheit überprüft worden sein.** Volle inhaltliche Verantwortung
    bleibt bei der Verfasserin/dem Verfasser, unabhängig davon, welche
-   Werkzeuge beim Schreiben geholfen haben.
+   Werkzeuge beim Schreiben geholfen haben. Konkret heißt das: Mit der
+   eidesstattlichen Versicherung und der KI-Erklärung unterschreibt ihr
+   persönlich, dass die Arbeit eure eigenständige Leistung ist und alle
+   Inhalte geprüft sind. Ein Fehler, den Claude gemacht hat (falsches Zitat,
+   falsche Zahl, falsche Schlussfolgerung), ist bei der Einreichung euer
+   Fehler. Nicht dokumentierte KI-Nutzung kann als Täuschungsversuch gewertet
+   werden, mit den Folgen aus § 16 Abs. 2 der jeweiligen Promotionsordnung
+   (Ungültigkeit von Promotionsleistungen bis hin zum Widerruf der
+   Zulassung).
 
 Maßgeblich sind immer die jeweils aktuellen Originaldokumente auf den Seiten
 der Universität Heidelberg — diese fünf Punkte sind eine Zusammenfassung,
